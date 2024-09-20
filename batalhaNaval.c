@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-char tab[11][11][4];
+char tabP1[11][11][4];
+char tabP2[11][11][4];
 char *nums[10] = {" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "," 10"};
 char *leters[10] = {" A "," B "," C "," D "," E "," F "," G "," H "," I "," J "};
 
@@ -13,15 +14,15 @@ void gerarTabP1(){
     for(int i = 0; i < 11; i++){
         for(int j = 0; j < 11; j++){
             if(i == 0 && j >= 1){
-                strcpy(tab[i][j], nums[countNum]);
+                strcpy(tabP1[i][j], nums[countNum]);
                 countNum++;
             }else if(i >= 1 && j == 0){
-                strcpy(tab[i][j], leters[countLeter]);
+                strcpy(tabP1[i][j], leters[countLeter]);
                 countLeter++;
             }else if(i == 0 && j == 0){
-                strcpy(tab[i][j], "   ");
+                strcpy(tabP1[i][j], "   ");
             } else {
-                strcpy(tab[i][j], " O ");
+                strcpy(tabP1[i][j], " O ");
             }
         }
     }
@@ -35,15 +36,15 @@ void gerarTabP2(){
     for(int i = 0; i < 11; i++){
         for(int j = 0; j < 11; j++){
             if(i == 0 && j >= 1){
-                strcpy(tab[i][j], nums[countNum]);
+                strcpy(tabP2[i][j], nums[countNum]);
                 countNum++;
             }else if(i >= 1 && j == 0){
-                strcpy(tab[i][j], leters[countLeter]);
+                strcpy(tabP2[i][j], leters[countLeter]);
                 countLeter++;
             }else if(i == 0 && j == 0){
-                strcpy(tab[i][j], "   ");
+                strcpy(tabP2[i][j], "   ");
             } else {
-                strcpy(tab[i][j], " O ");
+                strcpy(tabP2[i][j], " O ");
             }
         }
     }
@@ -61,7 +62,7 @@ void menu(){
             printf("Tabuleiro IA: \n\n");
             for(int i = 0; i < 11; i++){
                 for(int j = 0; j < 11; j++){
-                    printf("%s",tab[i][j]);
+                    printf("%s",tabP1[i][j]);
                 }
                 printf("\n");
             }
@@ -70,7 +71,7 @@ void menu(){
             printf("Seu tabuleiro: \n\n");
             for(int i = 0; i < 11; i++){
                 for(int j = 0; j < 11; j++){
-                    printf("%s",tab[i][j]);
+                    printf("%s",tabP2[i][j]);
                 }
                 printf("\n");
             }
