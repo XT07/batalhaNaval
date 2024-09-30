@@ -6,8 +6,9 @@
 char tab[11][11];
 char tabP1[11][11][4];
 char tabP2[11][11][4];
-char *nums[10] = {" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "," 10"};
-char *leters[10] = {" A "," B "," C "," D "," E "," F "," G "," H "," I "," J "};
+const char *nums[10] = {" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "," 10"};
+const char *leters[10] = {" A "," B "," C "," D "," E "," F "," G "," H "," I "," J "};
+const char *letersConf[10] = {'A','B','C','D','E','F','G','H','I','J'};
 
 void menu();
 
@@ -32,7 +33,7 @@ void gerarTab(){
     }
 }
 
-int gerarTabP1(int pos1N1, int pos2N1, int pos3N1, int pos1N2, int pos2N2, int pos1N3, int pos2N3, int pos3N3, int posN3){
+int gerarTabP1(){
     int countNum = 0;
     int countLeter = 0;
 
@@ -102,10 +103,19 @@ void shipPos(){
 
                 switch(direct){
                     case '1': {
+                        int leterOk = 0;
+
                         do{
                             printf("\n\nEscolha a linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos1AN1);
-                        }while(pos1AN1 <= '0' && pos1AN1 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos1AN1)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
                         do{
                             printf("\n\nEscolha a posicao da primeira coluna: ");
                             scanf("%d", &pos2N1);
@@ -119,18 +129,34 @@ void shipPos(){
                     }
 
                     case '2': {
+                        int leterOk = 0;
+
                         do{
                             printf("\n\nEscolha a coluna que ele ficara: ");
                             scanf("%d", &pos1N1);
                         }while(pos1N1 <= 0 && pos1N1 >= 11);
                         do{
-                            printf("\n\nEscolha a posicao da primeira linha: ");
+                            printf("\n\nEscolha a 1 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos2AN1);
-                        }while(pos2AN1 <= '0' && pos2AN1 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos2AN1)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
                         do{
-                            printf("\n\nEscolha a posicao da segunda linha: ");
+                            printf("\n\nEscolha a 2 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos3AN1);
-                        }while(pos3AN1 <= '0' && pos3AN1 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos3AN1)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
 
                         break;
                     }
@@ -157,10 +183,19 @@ void shipPos(){
 
                 switch(direct){
                     case '1': {
+                        int leterOk = 0;
+
                         do{
                             printf("\n\nEscolha a linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos1AN2);
-                        }while(pos1AN2 <= '0' && pos1AN2 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos1AN2)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
                         do{
                             printf("\n\nEscolha a posicao da primeira coluna: ");
                             scanf("%d", &pos2N2);
@@ -174,18 +209,34 @@ void shipPos(){
                     }
 
                     case '2': {
+                        int leterOk = 0;
+
                         do{
                             printf("\n\nEscolha a coluna que ele ficara: ");
                             scanf("%d", &pos1N2);
                         }while(pos1N2 <= 0 && pos1N2 >= 11);
                         do{
-                            printf("\n\nEscolha a posicao da primeira linha: ");
+                            printf("\n\nEscolha a 1 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos2AN2);
-                        }while(pos2AN2 <= '0' && pos2AN2 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos2AN2)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
                         do{
-                            printf("\n\nEscolha a posicao da segunda linha: ");
+                            printf("\n\nEscolha a 2 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos3AN2);
-                        }while(pos3AN2 <= '0' && pos3AN2 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos3AN2)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
 
                         break;
                     }
@@ -212,10 +263,19 @@ void shipPos(){
 
                 switch(direct){
                     case '1': {
+                        int leterOk = 0;
+
                         do{
-                            printf("\n\nEscolha a linha que ele ficara: ");
+                            printf("\n\nEscolha a linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos1N3);
-                        }while(pos1N3 <= '0' && pos1N3 >= '11');
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos1N3)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
                         do{
                             printf("\n\nEscolha a posicao da primeira coluna: ");
                             scanf("%d", &pos2N3);
@@ -228,23 +288,65 @@ void shipPos(){
                             printf("\n\nEscolha a posicao da terceira coluna: ");
                             scanf("%d", &pos4N3);
                         }while(pos4N3 <= 0 && pos4N3 >= 11);
-                        printf("\n\nEscolha a posicao da quarta coluna: ");
-                        scanf("%d", &pos5N3);
+                        do{
+                            printf("\n\nEscolha a posicao da quarta coluna: ");
+                            scanf("%d", &pos5N3);
+                        }while(pos5N3 <= 0 && pos5N3 >= 11);
 
                         break;
                     }
 
-                    case 2: {
-                        printf("\n\nEscolha a coluna que ele ficara: ");
-                        scanf("%d", &pos1N3);
-                        printf("\n\nEscolha a posicao da primeira linha: ");
-                        scanf("%d", &pos2N3);
-                        printf("\n\nEscolha a posicao da segunda linha: ");
-                        scanf("%d", &pos3N3);
-                        printf("\n\nEscolha a posicao da terceira linha: ");
-                        scanf("%d", &pos4N3);
-                        printf("\n\nEscolha a posicao da quarta linha: ");
-                        scanf("%d", &pos5N3);
+                    case '2': {
+                        int leterOk = 0;
+                        
+                        do{
+                            printf("\n\nEscolha a coluna que ele ficara: ");
+                            scanf("%d", &pos1N3);
+                        }while(pos1N3 <= 0 && pos1N3 >= 11);
+                        do{
+                            printf("\n\nEscolha a 1 linha que ele ficara (coloque a letra correspondente a linha): ");
+                            scanf("%c", &pos2N3);
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos2N3)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
+                        do{
+                            printf("\n\nEscolha a 2 linha que ele ficara (coloque a letra correspondente a linha): ");
+                            scanf("%c", &pos3N3);
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos3N3)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
+                        do{
+                            printf("\n\nEscolha a 3 linha que ele ficara (coloque a letra correspondente a linha): ");
+                            scanf("%c", &pos4N3);
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos4N3)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
+                        do{
+                            printf("\n\nEscolha a 4 linha que ele ficara (coloque a letra correspondente a linha): ");
+                            scanf("%c", &pos5N3);
+                            for(int i = 0; i <= 9; i++){
+                                if(*letersConf[i] == toupper(pos5N3)){
+                                    leterOk = 1;
+                                }else{
+                                    leterOk = 0;
+                                }
+                            }
+                        }while(leterOk != 1);
 
                         break;
                     }
