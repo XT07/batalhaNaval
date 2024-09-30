@@ -8,7 +8,7 @@ char tabP1[11][11][4];
 char tabP2[11][11][4];
 const char *nums[10] = {" 1 "," 2 "," 3 "," 4 "," 5 "," 6 "," 7 "," 8 "," 9 "," 10"};
 const char *leters[10] = {" A "," B "," C "," D "," E "," F "," G "," H "," I "," J "};
-const char *letersConf[10] = {'A','B','C','D','E','F','G','H','I','J'};
+const char letersConf[10] = {'A','B','C','D','E','F','G','H','I','J'};
 
 void menu();
 
@@ -54,7 +54,7 @@ int gerarTabP1(){
     }
 }
 
-int gerarTabP2(int pos1N1, int pos2N1, int pos3N1, int pos1N2, int pos2N2, int pos1N3, int pos2N3, int pos3N3, int posN3){
+int gerarTabP2(){
     int countNum = 0;
     int countLeter = 0;
 
@@ -109,7 +109,7 @@ void shipPos(){
                             printf("\n\nEscolha a linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos1AN1);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos1AN1)){
+                                if(letersConf[i] == toupper(pos1AN1)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -139,7 +139,7 @@ void shipPos(){
                             printf("\n\nEscolha a 1 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos2AN1);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos2AN1)){
+                                if(letersConf[i] == toupper(pos2AN1)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -150,7 +150,7 @@ void shipPos(){
                             printf("\n\nEscolha a 2 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos3AN1);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos3AN1)){
+                                if(letersConf[i] == toupper(pos3AN1)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -189,7 +189,7 @@ void shipPos(){
                             printf("\n\nEscolha a linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos1AN2);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos1AN2)){
+                                if(letersConf[i] == toupper(pos1AN2)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -219,7 +219,7 @@ void shipPos(){
                             printf("\n\nEscolha a 1 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos2AN2);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos2AN2)){
+                                if(letersConf[i] == toupper(pos2AN2)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -230,7 +230,7 @@ void shipPos(){
                             printf("\n\nEscolha a 2 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos3AN2);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos3AN2)){
+                                if(letersConf[i] == toupper(pos3AN2)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -269,7 +269,7 @@ void shipPos(){
                             printf("\n\nEscolha a linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos1N3);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos1N3)){
+                                if(letersConf[i] == toupper(pos1N3)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -307,7 +307,7 @@ void shipPos(){
                             printf("\n\nEscolha a 1 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos2N3);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos2N3)){
+                                if(letersConf[i] == toupper(pos2N3)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -318,7 +318,7 @@ void shipPos(){
                             printf("\n\nEscolha a 2 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos3N3);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos3N3)){
+                                if(letersConf[i] == toupper(pos3N3)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -329,7 +329,7 @@ void shipPos(){
                             printf("\n\nEscolha a 3 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos4N3);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos4N3)){
+                                if(letersConf[i] == toupper(pos4N3)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
@@ -340,7 +340,7 @@ void shipPos(){
                             printf("\n\nEscolha a 4 linha que ele ficara (coloque a letra correspondente a linha): ");
                             scanf("%c", &pos5N3);
                             for(int i = 0; i <= 9; i++){
-                                if(*letersConf[i] == toupper(pos5N3)){
+                                if(letersConf[i] == toupper(pos5N3)){
                                     leterOk = 1;
                                 }else{
                                     leterOk = 0;
